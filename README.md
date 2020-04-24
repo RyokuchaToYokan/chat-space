@@ -30,7 +30,8 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :groups
+- has_many :groups_users
+- has_many :groups, through: :groups_users
 - has_many :posts
 
 
@@ -50,7 +51,8 @@ Things you may want to cover:
 |groupname|string|null: false|
 |post_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :user
+- has_many :groups_users
+- has_many :user, through: :groups_users
 - has_many :posts
 
 

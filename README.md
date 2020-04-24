@@ -49,7 +49,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |group|string|null: false|
-|post_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :groups_users
 - has_many :user, through: :groups_users

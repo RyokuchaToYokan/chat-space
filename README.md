@@ -55,16 +55,6 @@ Things you may want to cover:
 - has_many :posts
 
 
-## groups_postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :group
-- belongs_to :post
-
-
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|

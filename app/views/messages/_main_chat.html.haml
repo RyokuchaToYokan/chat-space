@@ -28,10 +28,19 @@
         Morning!
   -# メインチャットフッター部分
   .main-chat__message-form
-    .main-chat__message-form__box
-      .main-chat__message-form__box__text
-        type a message
-      = link_to "#", class: "main-chat__message-form__box__image" do
-        = icon("far", "image")
-    .main-chat__message-form__send-box
-      = link_to "Send", "#", class: "main-chat__message-form__send-box__btn"
+    %form.main-chat__message-form__box
+      .main-chat__message-form__box
+        %input{type: "text", class: "main-chat__message-form__box__text", placeholder: "type a message"}
+        %label{class: "main-chat__message-form__box__image"}
+          = icon("far", "image")
+      %input{type: "submit", class: "main-chat__message-form__send-box"}
+
+
+    -# LGTM済み(メインチャットフッター部分)
+    -# .main-chat__message-form__box
+    -#   .main-chat__message-form__box__text
+    -#     type a message
+    -#   = link_to "#", class: "main-chat__message-form__box__image" do
+    -#     = icon("far", "image")
+    -# .main-chat__message-form__send-box
+    -#   = link_to "Send", "#", class: "main-chat__message-form__send-box__btn"

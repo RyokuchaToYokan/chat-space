@@ -46,7 +46,6 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     &__box {
-      background-color: red;
       &__group-name {
         font-size: 15px;
         padding: 20px 20px 5px;
@@ -67,6 +66,33 @@
     background-color: #ffffff;
     border-bottom: 1px solid #eeeeee;
     height: 100px;
+    display: flex;
+    justify-content: space-between;
+    &__left-box {
+      &__group-name {
+        color: #333333;
+        font-size: 20px;
+        padding: 35px 0 15px 40px;
+      }
+      &__member {
+        color: #999999;
+        font-size: 12px;
+        padding: 0 0 0 40px;
+      }
+    }
+    &__edit-box {
+      width: 72px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #38aef0;
+      margin: 28px 40px 32px 0;
+      &__btn {
+        padding: 0 20px;
+        color: #38aef0;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
   }
   &__message-list {
     background-color: #fafafa;

@@ -8,6 +8,7 @@
 
 .side-bar {
   color: #ffffff;
+  font-weight: bold;
   background-color: #253141;
   height: 100vh;
   width: 300px;
@@ -17,14 +18,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    &__top-item {
+    &__header {
       height: 20px;
       width: 260px;
       display: flex;
       justify-content: space-between;
       &__name {
         font-size: 16px;
-        font-weight: bold;
         height: 20px;
         line-height: 20px;
       }
@@ -45,6 +45,7 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+
   }
 }
 

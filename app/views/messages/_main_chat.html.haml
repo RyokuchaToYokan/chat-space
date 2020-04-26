@@ -25,3 +25,10 @@
       .main-chat__message-list__box__message
         Morning!
   .main-chat__message-form
+    .main-chat__message-form__box
+      .main-chat__message-form__box__text
+        type a message
+      = link_to "#", class: "main-chat__message-form__box__image" do
+        = icon("far", "image")
+    .main-chat__message-form__send-box
+      = link_to "Send", "#", class: "main-chat__message-form__send-box__btn"

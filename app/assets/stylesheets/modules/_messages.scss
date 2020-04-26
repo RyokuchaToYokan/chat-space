@@ -28,11 +28,15 @@
         height: 20px;
         line-height: 20px;
       }
-      &__icon {
+      &__icon-box {
         background-color: green;
         width: 60px;
         height: 20px;
         line-height: 20px;
+        &__icon {
+          color: #ffffff;
+          text-decoration: none;
+        }
       }
     }
   }

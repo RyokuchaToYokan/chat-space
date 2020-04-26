@@ -1,4 +1,5 @@
 .main-chat
+  -# メインチャットヘッダー部分
   .main-chat__group-info
     .main-chat__group-info__left-box
       .main-chat__group-info__left-box__group-name
@@ -7,6 +8,7 @@
         Member : user-name
     .main-chat__group-info__edit-box
       = link_to "Edit", "#", class: "main-chat__group-info__edit-box__btn"
+  -# メインチャットコンテンツ部分
   .main-chat__message-list
     .main-chat__message-list__box
       .main-chat__message-list__box__upload
@@ -24,6 +26,7 @@
           2020/04/27[mon] 07:00
       .main-chat__message-list__box__message
         Morning!
+  -# メインチャットフッター部分
   .main-chat__message-form
     .main-chat__message-form__box
       .main-chat__message-form__box__text

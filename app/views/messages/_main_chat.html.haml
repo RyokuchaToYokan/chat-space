@@ -1,0 +1,37 @@
+.main-chat
+  -# メインチャットヘッダー部分
+  .main-chat__group-info
+    .main-chat__group-info__left-box
+      .main-chat__group-info__left-box__group-name
+        user-name
+      .main-chat__group-info__left-box__member
+        Member : user-name
+    .main-chat__group-info__edit-box
+      = link_to "Edit", "#", class: "main-chat__group-info__edit-box__btn"
+  -# メインチャットコンテンツ部分
+  .main-chat__message-list
+    .main-chat__message-list__box
+      .main-chat__message-list__box__upload
+        .main-chat__message-list__box__upload__name
+          user-name
+        .main-chat__message-list__box__upload__date
+          2020/04/26[Sun] 15:00
+      .main-chat__message-list__box__message
+        Hello!
+    .main-chat__message-list__box
+      .main-chat__message-list__box__upload
+        .main-chat__message-list__box__upload__name
+          user-name
+        .main-chat__message-list__box__upload__date
+          2020/04/27[mon] 07:00
+      .main-chat__message-list__box__message
+        Morning!
+  -# メインチャットフッター部分
+  .main-chat__message-form
+    .main-chat__message-form__box
+      .main-chat__message-form__box__text
+        type a message
+      = link_to "#", class: "main-chat__message-form__box__image" do
+        = icon("far", "image")
+    .main-chat__message-form__send-box
+      = link_to "Send", "#", class: "main-chat__message-form__send-box__btn"

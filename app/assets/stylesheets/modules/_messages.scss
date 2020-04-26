@@ -21,6 +21,19 @@
       background-color: #d8d8d8;
       height: 20px;
       width: 260px;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        background-color: red;
+        height: 20px;
+        line-height: 20px;
+      }
+      &__icon {
+        background-color: green;
+        width: 60px;
+        height: 20px;
+        line-height: 20px;
+      }
     }
   }
   &__group-list {

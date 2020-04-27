@@ -46,13 +46,20 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+    &__box a {
+      text-decoration: none;
+    }
     &__box {
       &__group-name {
         font-size: 15px;
+        color: #ffffff;
+        font-weight: bold;
         padding: 20px 20px 5px;
       }
       &__group-message {
         font-size: 11px;
+        color: #ffffff;
+        font-weight: bold;
         padding: 0 20px 40px;
       }
     }

@@ -11,8 +11,10 @@
           = icon("fas", "cog")
   -# サイドバーコンテンツ部分
   .side-bar__group-list
-    .side-bar__group-list__box
-      .side-bar__group-list__box__group-name
-        techcamp
-      .side-bar__group-list__box__group-message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side-bar__group-list__box
+        = link_to "#" do
+          .side-bar__group-list__box__group-name
+            = group.name
+          .side-bar__group-list__box__group-message
+            まだメッセージはありません

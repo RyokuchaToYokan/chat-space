@@ -1,5 +1,8 @@
 class GroupsController < ApplicationController
 
+  def index
+  end
+
   def new
     @group = Group.new
     @group.users << current_user  # ページ遷移時に自身の名前に自動的にチェックが入る

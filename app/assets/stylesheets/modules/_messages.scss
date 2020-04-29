@@ -68,6 +68,10 @@
 
 
 // メインチャット画面＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+li {
+  display: inline-block;
+}
+
 .main-chat {
   background-color: #ffffff;
   height: 100vh;
@@ -88,6 +92,10 @@
         color: #999999;
         font-size: 12px;
         padding: 0 0 0 40px;
+        display: flex;
+        &__list {
+          margin-left: 5px;
+        }
       }
     }
     &__edit-box {
@@ -141,8 +149,9 @@
       margin: 0 15px 0 40px;
       color: #434a54;
       padding: 0 40px 0 10px;
+      position: relative;
       &__image {
-        right: 10px;
+        right: 170px;
         color: #434a54;
         position: absolute;
       }

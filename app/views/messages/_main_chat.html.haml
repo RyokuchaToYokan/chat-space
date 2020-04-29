@@ -3,9 +3,13 @@
   .main-chat__group-info
     .main-chat__group-info__left-box
       .main-chat__group-info__left-box__group-name
-        user-name
+        = @group.name
       .main-chat__group-info__left-box__member
-        Member : user-name
+        Member :
+        .main-chat__group-info__left-box__member__list
+          %ul
+            - @group.users.each do |user|
+              %li= user.name
     .main-chat__group-info__edit-box
       = link_to "Edit", "#", class: "main-chat__group-info__edit-box__btn"
   -# メインチャットコンテンツ部分

@@ -3,35 +3,25 @@
   .main-chat__group-info
     .main-chat__group-info__left-box
       .main-chat__group-info__left-box__group-name
-        user-name
+        = @group.name
       .main-chat__group-info__left-box__member
-        Member : user-name
+        Member :
+        .main-chat__group-info__left-box__member__list
+          %ul
+            - @group.users.each do |user|
+              %li= user.name
     .main-chat__group-info__edit-box
-      = link_to "Edit", "#", class: "main-chat__group-info__edit-box__btn"
+      = link_to "Edit", edit_group_path(@group), class: "main-chat__group-info__edit-box__btn"
   -# メインチャットコンテンツ部分
   .main-chat__message-list
-    .main-chat__message-list__box
-      .main-chat__message-list__box__upload
-        .main-chat__message-list__box__upload__name
-          user-name
-        .main-chat__message-list__box__upload__date
-          2020/04/26[Sun] 15:00
-      .main-chat__message-list__box__message
-        Hello!
-    .main-chat__message-list__box
-      .main-chat__message-list__box__upload
-        .main-chat__message-list__box__upload__name
-          user-name
-        .main-chat__message-list__box__upload__date
-          2020/04/27[mon] 07:00
-      .main-chat__message-list__box__message
-        Morning!
+    = render @messages
   -# メインチャットフッター部分
-  .main-chat__message-form
-    .main-chat__message-form__box
-      .main-chat__message-form__box__text
-        type a message
-      = link_to "#", class: "main-chat__message-form__box__image" do
-        = icon("far", "image")
-    .main-chat__message-form__send-box
-      = link_to "Send", "#", class: "main-chat__message-form__send-box__btn"
+  .footer-form
+    = form_for [@group, @message] do |f|
+      .main-chat__message-form
+        = f.text_field :content, class: "main-chat__message-form__text", placeholder: "type a message"
+        .main-chat__message-form__text__image
+          = f.label :image, class: "" do
+            = icon("far", "image", class: "")
+            = f.file_field :image, class: "main-chat__message-form__text__hidden"
+        = f.submit "Send", class: "main-chat__message-form__send-box"

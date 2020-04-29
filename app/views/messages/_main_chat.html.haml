@@ -11,7 +11,7 @@
             - @group.users.each do |user|
               %li= user.name
     .main-chat__group-info__edit-box
-      = link_to "Edit", "#", class: "main-chat__group-info__edit-box__btn"
+      = link_to "Edit", edit_group_path(@group), class: "main-chat__group-info__edit-box__btn"
   -# メインチャットコンテンツ部分
   .main-chat__message-list
     = render @messages

@@ -3,7 +3,7 @@ $(function(){
     if ( message.image ) {
       var html =
        `
-        <div class="main-chat__message-list__box">
+        <div class="main-chat__message-list__box" data-message-id=${message.id}>
           <div class="main-chat__message-list__box__upload">
             <div class="main-chat__message-list__box__upload__name">
               ${message.user_name}
@@ -23,7 +23,7 @@ $(function(){
     } else {
       var html =
        `
-          <div class="main-chat__message-list__box">
+          <div class="main-chat__message-list__box" data-message-id=${message.id}>
             <div class="main-chat__message-list__box__upload">
               <div class="main-chat__message-list__box__upload__name">
                 ${message.user_name}
@@ -65,4 +65,30 @@ $(function(){
       alert("メッセージの送信に失敗しました");
     })
   })
+
+  var reloadMessages = function() {
+    var last_message_id = $('.main-chat__message-list__box:last').data("message-id");   // LastMessageの取得
+    $.ajax({
+      url: "api/messages",    //現在のPassはgroups/id番号であり、文字列を指定すると相対パスになるため左記のとおり
+      type: "get",            //ルーティングで設定
+      dataType: "json",
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        var insertHTML = "";                          //追加するHTMLの入れ物を作成
+        $.each(messages, function(i, message) {       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+          insertHTML += buildHTML(message)
+        });
+        $(".main-chat__message-list").append(insertHTML);             //メッセージが入ったHTMLに、入れ物ごと追加
+        $(".main-chat__message-list").animate({ scrollTop: $(".main-chat__message-list")[0].scrollHeight});
+      }
+    })
+    .fail(function() {
+      alert("error")
+    });
+  };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });

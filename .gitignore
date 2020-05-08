@@ -18,3 +18,5 @@
 
 # 投稿画像をGitHubで管理しないように
 public/uploads/*
+
+config/secrets.yml
